@@ -1,0 +1,25 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug - l432_test",
+            "request": "launch",
+            "type": "cortex-debug",
+            "cwd": "${workspaceRoot}",
+            "executable": "${workspaceFolder}/projects/l432_test/target/thumbv7em-none-eabihf/debug/l432_test",
+            "svdFile": "${workspaceFolder}/svd/stm32l4/STM32L4x2.svd",
+            "servertype": "openocd",
+            "configFiles": ["interface/stlink.cfg", "target/stm32l4x.cfg"],
+            "preLaunchCommands": [
+                "monitor init",
+                "monitor reset init",
+                "monitor halt",
+                "monitor flash write_image erase ./projects/l432_test/target/thumbv7em-none-eabihf/debug/l432_test.bin 0x08000000"
+            ],
+            "postLaunchCommands": ["continue"] // Don't stop before at the first line
+        }
+    ]
+}
