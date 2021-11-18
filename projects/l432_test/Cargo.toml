@@ -1,10 +1,7 @@
 [package]
-name = "L432Test"
+name = "l432_test"
 version = "0.0.0"
-edition = "2018"
-
-[build]
-target = "thumbv7em-none-eabihf"
+edition = "2021"
 
 [dependencies]
 stm32l4 = { version = "0.14.0",  features = ["stm32l4x2", "rt"] }
