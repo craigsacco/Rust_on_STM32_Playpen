@@ -19,7 +19,10 @@
                 "monitor halt",
                 "monitor flash write_image erase ./projects/l432_test/target/thumbv7em-none-eabihf/debug/l432_test.bin 0x08000000"
             ],
-            "postLaunchCommands": ["continue"] // Don't stop before at the first line
+            "postLaunchCommands": [
+                "monitor arm semihosting enable",
+                "continue"
+            ]
         }
     ]
 }

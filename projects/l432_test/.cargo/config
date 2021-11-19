@@ -1,2 +1,6 @@
+[alias]
+elf2bin = ["objcopy", "--target", "thumbv7em-none-eabihf", "--", "-O", "binary", "target/thumbv7em-none-eabihf/debug/l432_test.bin"]
+
 [build]
 target = "thumbv7em-none-eabihf"
+rustflags = ["-Clink-args=-Tlink.x -Map=target/thumbv7em-none-eabihf/debug/l432_test.map"]
